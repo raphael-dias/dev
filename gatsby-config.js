@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter SaaS Marketing`,
-    description: `A simple one page marketing starter for saas companies.`,
-    author: `Keegan Burkett`,
+    title: `My CV and blog`,
+    description: `A simple one page.`,
+    author: `Raphael Dias`,
+    pathPrefix: `/dev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -3,12 +3,17 @@ import styled from "styled-components"
 
 import { Container, Section } from "../global"
 
+function portfolioLink(){
+  let url = 'https://github.com/raphael-dias';
+  window.location = url;
+}
 const GetStarted = () => (
-  <StyledSection>
+  <StyledSection id="portifolio">
     <GetStartedContainer>
-      <GetStartedTitle>Be the first to get the beta</GetStartedTitle>
-      <TryItButton>Get early access</TryItButton>
-      <Subtitle>No credit card required.</Subtitle>
+      
+      <GetStartedTitle>My Portfolio</GetStartedTitle>
+          <TryItButton onClick={portfolioLink}> My GitHub</TryItButton>
+      {/* <Subtitle>No credit card required.</Subtitle> */}
     </GetStartedContainer>
   </StyledSection>
 )

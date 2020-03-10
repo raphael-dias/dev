@@ -4,44 +4,44 @@ import styled from "styled-components"
 import { Section, Container } from "../global"
 
 const Features = () => (
-  <Section id="features">
+  <Section id="skills">
     <StyledContainer>
-      <Subtitle>Features</Subtitle>
-      <SectionTitle>Smart money management</SectionTitle>
+      <Subtitle>Skills</Subtitle>
+      <SectionTitle>Web Developer</SectionTitle>
       <FeaturesGrid>
         <FeatureItem>
-          <FeatureTitle>Notifications</FeatureTitle>
+          <FeatureTitle>React</FeatureTitle>
           <FeatureText>
-            Receive budget and spending alerts based on your favorite triggers.
+            Developing SPAs and microservices. 
           </FeatureText>
         </FeatureItem>
         <FeatureItem>
-          <FeatureTitle>Security</FeatureTitle>
+          <FeatureTitle>HTML/CSS</FeatureTitle>
           <FeatureText>
-            Your data is always safe with us as we use the latest security
-            protocols.
+            Knowledge in grids, animations, variables and Media Queries. 
           </FeatureText>
         </FeatureItem>
         <FeatureItem>
-          <FeatureTitle>Automation</FeatureTitle>
+          <FeatureTitle>APIs</FeatureTitle>
           <FeatureText>
-            Create smart automated workflows and triggers for your money.
+            Developing APIs Rest in Node.js and Python.
           </FeatureText>
         </FeatureItem>
         <FeatureItem>
-          <FeatureTitle>Aggregation</FeatureTitle>
+          <FeatureTitle>SQL</FeatureTitle>
           <FeatureText>
-            Easily link up to 5 banks to your finance account.
+          Experienced in PostgreSQL and MongoDB. 
           </FeatureText>
         </FeatureItem>
         <FeatureItem>
-          <FeatureTitle>Payments</FeatureTitle>
-          <FeatureText>Send money to friends and family with ease.</FeatureText>
+          <FeatureTitle>Agile</FeatureTitle>
+          <FeatureText>Experienced in Development Methodologies and Scrum.
+          </FeatureText>
         </FeatureItem>
         <FeatureItem>
-          <FeatureTitle>Rewards</FeatureTitle>
+          <FeatureTitle>Docker</FeatureTitle>
           <FeatureText>
-            High interest and rewards for hitting your goals.
+          Able to orchestrate Containers and Microservices.
           </FeatureText>
         </FeatureItem>
       </FeaturesGrid>

@@ -6,12 +6,26 @@ import Img from "gatsby-image"
 import { Container } from "../global"
 
 const Header = () => {
+ 
+//   const data = useStaticQuery(graphql`
+//   query {
+//     file(sourceInstanceName: { eq: "product" }, name: { eq: "green-skew" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 1000) {
+//           ...GatsbyImageSharpFluid_tracedSVG
+//         }
+//       }
+//     }
+//   }
+// `)
+
+
   const data = useStaticQuery(graphql`
     query {
-      file(sourceInstanceName: { eq: "product" }, name: { eq: "green-skew" }) {
+      placeholderImage: file(relativePath: { eq: "skew.png" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_tracedSVG
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -27,27 +41,25 @@ const Header = () => {
       <Container>
         <Flex>
           <HeaderTextGroup>
-            <Subtitle>Personal Finance</Subtitle>
+            {/* <Subtitle>Desenvolvedor Web</Subtitle> */}
             <h1>
-              All your money,
-              <br />
-              one account
-            </h1>
+              Web Developer
+              </h1>
             <h2>
-              We're building next generation personal finance tools. Sign up to
-              get early access.
+              I'm building the next generation of personal Web Apps.
             </h2>
-            <HeaderForm onSubmit={handleSubmit}>
+            {/* <HeaderForm onSubmit={handleSubmit}>
               <HeaderInput placeholder="Your email" />
               <HeaderButton>Early access</HeaderButton>
             </HeaderForm>
             <FormSubtitle>
               Already have a beta account?{" "}
               <FormSubtitleLink to="/">Sign in</FormSubtitleLink>
-            </FormSubtitle>
+            </FormSubtitle> */}
           </HeaderTextGroup>
           <ImageWrapper>
-            <StyledImage fluid={data.file.childImageSharp.fluid} />
+            <StyledImage fluid={data.placeholderImage.childImageSharp.fluid} />
+            {/* <StyledImage fluid={imageteste.file.childImageSharp.fluid} /> */}
             <br />
           </ImageWrapper>
         </Flex>
@@ -65,12 +77,6 @@ const HeaderWrapper = styled.header`
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5vw));
   @media (max-width: ${props => props.theme.screen.md}) {
   }
-`
-const Subtitle = styled.h5`
-  font-size: 16px;
-  color: ${props => props.theme.color.accent};
-  letter-spacing: 0px;
-  margin-bottom: 16px;
 `
 
 const HeaderTextGroup = styled.div`
@@ -111,83 +117,6 @@ const Flex = styled.div`
   }
 `
 
-const HeaderForm = styled.form`
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 16px;
-
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    flex-direction: column;
-  }
-`
-
-const FormSubtitle = styled.span`
-  ${props => props.theme.font_size.xxsmall}
-`
-
-const FormSubtitleLink = styled(Link)`
-  color: ${props => props.theme.color.secondary};
-  padding-bottom: 1px;
-  margin-left: 8px;
-  text-decoration: none;
-  border-bottom: 1px solid ${props => props.theme.color.secondary};
-`
-
-const HeaderInput = styled.input`
-  font-weight: 500;
-  font-size: 16px;
-  color: ${props => props.theme.color.primary};
-  line-height: 42px;
-  width: 100%;
-  text-align: left;
-  height: 60px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: ${props => props.theme.color.secondary};
-  border-image: initial;
-  border-radius: 4px;
-  padding: 8px 16px;
-  outline: 0px;
-  &:focus {
-    box-shadow: inset ${props => props.theme.color.secondary} 0px 0px 0px 2px;
-  }
-  @media (max-width: ${props => props.theme.screen.md}) {
-    margin-bottom: 8px;
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    display: block;
-    width: 100%;
-  }
-`
-
-const HeaderButton = styled.button`
-  font-weight: 500;
-  font-size: 14px;
-  color: white;
-  letter-spacing: 1px;
-  height: 60px;
-  display: block;
-  margin-left: 8px;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  background: ${props => props.theme.color.secondary};
-  border-radius: 4px;
-  padding: 0px 40px;
-  border-width: 0px;
-  border-style: initial;
-  border-color: initial;
-  border-image: initial;
-  outline: 0px;
-  &:hover {
-    box-shadow: rgba(110, 120, 152, 0.22) 0px 2px 10px 0px;
-  }
-  @media (max-width: ${props => props.theme.screen.md}) {
-  }
-  @media (max-width: ${props => props.theme.screen.sm}) {
-    margin-left: 0;
-  }
-`
 const ImageWrapper = styled.div`
   justify-self: end;
   align-self: center;
@@ -197,9 +126,10 @@ const ImageWrapper = styled.div`
 `
 
 const StyledImage = styled(Img)`
+  
   width: 500px;
   @media (max-width: ${props => props.theme.screen.md}) {
-    width: 400px;
+    width: 800px;
   }
   @media (max-width: ${props => props.theme.screen.sm}) {
     width: 300px;
